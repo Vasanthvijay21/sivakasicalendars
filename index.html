@@ -41,11 +41,6 @@
             }
         }
     </script>
-    <style>
-        /* Custom modal transition */
-        .modal-enter { opacity: 0; transform: scale(0.9); }
-        .modal-enter-active { opacity: 1; transform: scale(1); transition: all 0.3s ease-out; }
-    </style>
 </head>
 <body class="bg-gray-50 text-gray-800 antialiased overflow-x-hidden">
 
@@ -156,7 +151,7 @@
                     <i class="fas fa-times"></i>
                 </button>
             </div>
-            <div class="p-6 md:p-8">
+            <div class="p-6 md:p-8 overflow-y-auto max-h-[75vh]">
                 <div class="mb-6 pb-4 border-b border-gray-100">
                     <p class="text-gray-500 text-xs uppercase tracking-wider font-semibold mb-1">Selected Product</p>
                     <p id="modalProductName" class="font-bold text-lg text-sivakasi-red"></p>
@@ -190,6 +185,14 @@
                         </div>
                         <input type="tel" id="customerPincode" placeholder="Pincode *" required pattern="[0-9]{6}" class="w-full bg-gray-50 border border-gray-200 rounded-lg pl-10 pr-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-sivakasi-red/50 focus:border-sivakasi-red transition-all">
                     </div>
+
+                    <!-- QUANTITY FIELD -->
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <i class="fas fa-boxes text-gray-400 text-sm"></i>
+                        </div>
+                        <input type="number" id="customerQuantity" min="100" placeholder="Quantity (Minimum 100) *" required class="w-full bg-gray-50 border border-gray-200 rounded-lg pl-10 pr-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-sivakasi-red/50 focus:border-sivakasi-red transition-all">
+                    </div>
                     
                     <div class="pt-4">
                         <button type="submit" class="w-full bg-[#25D366] hover:bg-[#1ebd5a] text-white font-bold py-4 rounded-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex justify-center items-center group">
@@ -212,7 +215,7 @@
             easing: 'ease-out-cubic',
         });
 
-        // 1. Data Array - Updated to root folder for mobile upload compatibility
+        // 1. Data Array - Uses ID for safe JavaScript function calls
         const products = [
             { id: 1, name: '12" x 18" Gold Calendar', desc: 'Advt. Area: 5.5 x 9.5 Inches | Slip No: 6', image: '12x18-gold.jpg', delay: 0 },
             { id: 2, name: '10" x 15" Deluxe Real Art', desc: 'Advt. Area: 5.25 x 9.25 Inches | Slip No: 5', image: '10x15-deluxe.jpg', delay: 100 },
@@ -252,7 +255,7 @@
                             <h3 class="font-serif font-bold text-xl mb-2 text-sivakasi-dark group-hover:text-sivakasi-red transition-colors">${product.name}</h3>
                             <p class="text-gray-500 text-sm font-light">${product.desc}</p>
                         </div>
-                        <button onclick="openModal('${product.name}')" class="w-full bg-gray-50 hover:bg-gradient-to-r hover:from-sivakasi-red hover:to-sivakasi-dark text-sivakasi-red hover:text-white border border-gray-200 hover:border-transparent py-3 rounded-xl font-semibold transition-all duration-300 flex justify-center items-center">
+                        <button onclick="openModal(${product.id})" class="w-full bg-gray-50 hover:bg-gradient-to-r hover:from-sivakasi-red hover:to-sivakasi-dark text-sivakasi-red hover:text-white border border-gray-200 hover:border-transparent py-3 rounded-xl font-semibold transition-all duration-300 flex justify-center items-center">
                             Request Quote <i class="fas fa-arrow-right ml-2 text-sm"></i>
                         </button>
                     </div>
@@ -266,9 +269,12 @@
         const modalContent = document.getElementById('modalContent');
         const form = document.getElementById('enquiryForm');
 
-        function openModal(productName) {
-            document.getElementById('modalProductName').innerText = productName;
-            document.getElementById('productInterest').value = productName;
+        function openModal(productId) {
+            // Find the product by ID instead of passing the name with quotes
+            const product = products.find(p => p.id === productId);
+            
+            document.getElementById('modalProductName').innerText = product.name;
+            document.getElementById('productInterest').value = product.name;
             
             // Show modal
             modal.classList.remove('hidden');
@@ -302,6 +308,7 @@
             e.preventDefault();
             
             const product = document.getElementById('productInterest').value;
+            const quantity = document.getElementById('customerQuantity').value;
             const name = document.getElementById('customerName').value;
             const address = document.getElementById('customerAddress').value;
             const district = document.getElementById('customerDistrict').value;
@@ -311,7 +318,8 @@
             const whatsappNumber = "917904216920";
             
             let message = `*New Product Enquiry*\n\n`;
-            message += `*Product:* ${product}\n\n`;
+            message += `*Product:* ${product}\n`;
+            message += `*Quantity:* ${quantity}\n\n`;
             message += `*Customer Details:*\n`;
             message += `Name: ${name}\n`;
             message += `Address: ${address}\n`;
