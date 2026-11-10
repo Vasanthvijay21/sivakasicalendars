@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sivakasi Calendars | Premium 2027 Collection</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome & AOS Animation Library -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        'sivakasi-red': '#990000',
+                        'sivakasi-dark': '#4a0000',
+                        'sivakasi-gold': '#FFD700',
+                        'sivakasi-light': '#FFF9E6',
+                    },
+                    animation: {
+                        'gradient': 'gradient 8s ease infinite',
+                    },
+                    keyframes: {
+                        gradient: {
+                            '0%, 100%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom modal transition */
+        .modal-enter { opacity: 0; transform: scale(0.9); }
+        .modal-enter-active { opacity: 1; transform: scale(1); transition: all 0.3s ease-out; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased overflow-x-hidden">
+
+    <!-- Header (Glassmorphism) -->
+    <header class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-gray-200 transition-all duration-300">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2" data-aos="fade-right">
+                <div class="bg-gradient-to-br from-sivakasi-red to-sivakasi-dark p-2 rounded-lg shadow-lg">
+                    <i class="fas fa-calendar-alt text-sivakasi-gold text-xl"></i>
+                </div>
+                <span class="text-2xl font-serif font-bold text-sivakasi-red tracking-wide">Sivakasi Calendars</span>
+            </div>
+            <div class="hidden md:flex items-center space-x-8" data-aos="fade-left">
+                <a href="#about" class="text-gray-600 hover:text-sivakasi-red font-medium transition">About</a>
+                <a href="#products" class="text-gray-600 hover:text-sivakasi-red font-medium transition">Collection</a>
+            </div>
+            <a href="tel:7904216920" data-aos="zoom-in" class="flex items-center bg-gradient-to-r from-sivakasi-red to-sivakasi-dark text-sivakasi-gold px-5 py-2 rounded-full font-bold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
+                <i class="fas fa-phone-alt mr-2 animate-bounce"></i> 7904216920
+            </a>
+        </div>
+    </header>
+
+    <!-- Animated Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <!-- Animated Background Gradient -->
+        <div class="absolute inset-0 bg-gradient-to-br from-sivakasi-dark via-sivakasi-red to-red-900 bg-[length:200%_200%] animate-gradient"></div>
+        
+        <!-- Decorative Overlay -->
+        <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'#ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+        
+        <div class="container mx-auto px-4 relative z-10 text-center">
+            <span data-aos="fade-up" class="inline-block py-1 px-3 rounded-full bg-sivakasi-gold/20 text-sivakasi-gold font-semibold text-sm mb-6 border border-sivakasi-gold/50 backdrop-blur-sm">
+                <i class="fas fa-star mr-1"></i> New 2027 Catalog Available
+            </span>
+            <h1 data-aos="fade-up" data-aos-delay="100" class="text-5xl md:text-7xl font-serif font-bold mb-6 text-white drop-shadow-xl leading-tight">
+                Masterpieces in <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-sivakasi-gold to-yellow-200">Every Print</span>
+            </h1>
+            <p data-aos="fade-up" data-aos-delay="200" class="text-lg md:text-xl mb-10 text-gray-200 max-w-2xl mx-auto font-light">
+                Discover the authentic heritage of Sivakasi printing. Vibrant colors, premium real art paper, and divine designs for the upcoming year.
+            </p>
+            <div data-aos="fade-up" data-aos-delay="300" class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <a href="#products" class="w-full sm:w-auto bg-sivakasi-gold text-sivakasi-dark hover:bg-white px-8 py-4 rounded-full font-bold text-lg shadow-[0_0_20px_rgba(255,215,0,0.4)] hover:shadow-[0_0_30px_rgba(255,215,0,0.6)] hover:-translate-y-1 transition-all duration-300">
+                    Explore Collection
+                </a>
+                <a href="https://wa.me/917904216920?text=Hi%2C%20I%20would%20like%20to%20request%20your%20full%202027%20calendar%20catalogue." target="_blank" class="w-full sm:w-auto group flex items-center justify-center text-white border border-white/30 hover:bg-white/10 px-8 py-4 rounded-full font-semibold transition backdrop-blur-sm">
+                    <i class="fab fa-whatsapp text-2xl mr-2 text-green-400 group-hover:scale-110 transition-transform"></i> 
+                    Request Full Catalog
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-sivakasi-light relative overflow-hidden">
+        <div class="container mx-auto px-4 flex justify-center">
+            <div data-aos="fade-up" class="bg-white rounded-3xl p-8 md:p-12 shadow-xl max-w-4xl text-center relative z-10 border border-red-50">
+                <i class="fas fa-quote-left text-4xl text-gray-200 absolute top-8 left-8"></i>
+                <h2 class="text-3xl font-serif font-bold text-sivakasi-dark mb-6 relative z-10">Crafting Time Since Inception</h2>
+                <p class="text-gray-600 text-lg leading-relaxed relative z-10">
+                    Located in the printing capital of India, <strong>Sivakasi Calendars</strong> specializes in delivering top-notch, highly customizable designs. We combine traditional artistry with modern printing technology to bring you an impressive array of Deluxe Real Art, Fancy Die-cut, and Panjangam calendars perfect for corporate gifting or personal devotion.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-serif font-bold text-sivakasi-dark mb-4">Our 2027 Collection</h2>
+                <div class="h-1 w-24 bg-gradient-to-r from-sivakasi-red to-sivakasi-gold mx-auto rounded-full"></div>
+            </div>
+            
+            <!-- Dynamic Product Grid -->
+            <div id="productGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- Products injected by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-sivakasi-dark text-white pt-16 pb-8 relative overflow-hidden">
+        <div class="absolute top-0 w-full h-1 bg-gradient-to-r from-sivakasi-gold via-red-500 to-sivakasi-gold"></div>
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <h3 class="text-3xl font-serif font-bold text-sivakasi-gold mb-6">Sivakasi Calendars</h3>
+            <p class="mb-8 text-gray-300 max-w-md mx-auto">Delivering premium prints, spiritual artwork, and custom business calendars nationwide.</p>
+            
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="https://wa.me/917904216920?text=Hi%2C%20I%20have%20a%20general%20enquiry%20about%20your%20calendars." target="_blank" class="flex items-center justify-center bg-green-500 hover:bg-green-400 text-white w-auto px-6 py-3 rounded-full font-bold shadow-lg hover:shadow-green-500/50 hover:-translate-y-1 transition-all duration-300">
+                    <i class="fab fa-whatsapp text-2xl mr-2"></i> Chat with us
+                </a>
+            </div>
+
+            <p class="font-bold text-xl mb-8"><i class="fas fa-phone-alt text-sivakasi-gold mr-2"></i> +91 7904216920</p>
+            <div class="border-t border-white/10 pt-8 mt-8">
+                <p class="text-gray-400 text-sm">&copy; 2027 Sivakasi Calendars. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Inquiry Modal -->
+    <div id="inquiryModal" class="fixed inset-0 bg-sivakasi-dark/80 backdrop-blur-sm hidden z-[100] flex justify-center items-center px-4 transition-opacity duration-300 opacity-0 pointer-events-none">
+        <div id="modalContent" class="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden transform scale-95 transition-transform duration-300">
+            <div class="bg-gradient-to-r from-sivakasi-red to-sivakasi-dark px-6 py-5 flex justify-between items-center relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-white opacity-5 rounded-full -mr-10 -mt-10"></div>
+                <h3 class="text-xl font-serif font-bold text-white relative z-10">Request Quote</h3>
+                <button onclick="closeModal()" class="text-white hover:text-sivakasi-gold transition-colors focus:outline-none relative z-10 bg-black/20 p-2 rounded-full h-8 w-8 flex items-center justify-center">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="p-6 md:p-8">
+                <div class="mb-6 pb-4 border-b border-gray-100">
+                    <p class="text-gray-500 text-xs uppercase tracking-wider font-semibold mb-1">Selected Product</p>
+                    <p id="modalProductName" class="font-bold text-lg text-sivakasi-red"></p>
+                </div>
+                <form id="enquiryForm" class="space-y-4">
+                    <input type="hidden" id="productInterest">
+                    
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <i class="fas fa-user text-gray-400 text-sm"></i>
+                        </div>
+                        <input type="text" id="customerName" placeholder="Full Name *" required class="w-full bg-gray-50 border border-gray-200 rounded-lg pl-10 pr-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-sivakasi-red/50 focus:border-sivakasi-red transition-all">
+                    </div>
+                    
+                    <div class="relative">
+                        <div class="absolute top-3 left-0 pl-3 pointer-events-none">
+                            <i class="fas fa-map-marker-alt text-gray-400 text-sm"></i>
+                        </div>
+                        <textarea id="customerAddress" placeholder="Full Delivery Address *" required rows="2" class="w-full bg-gray-50 border border-gray-200 rounded-lg pl-10 pr-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-sivakasi-red/50 focus:border-sivakasi-red transition-all resize-none"></textarea>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <input type="text" id="customerDistrict" placeholder="District *" required class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-sivakasi-red/50 focus:border-sivakasi-red transition-all">
+                        
+                        <input type="text" id="customerState" placeholder="State *" required class="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-sivakasi-red/50 focus:border-sivakasi-red transition-all">
+                    </div>
+                    
+                    <div class="relative">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <i class="fas fa-map-pin text-gray-400 text-sm"></i>
+                        </div>
+                        <input type="tel" id="customerPincode" placeholder="Pincode *" required pattern="[0-9]{6}" class="w-full bg-gray-50 border border-gray-200 rounded-lg pl-10 pr-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-sivakasi-red/50 focus:border-sivakasi-red transition-all">
+                    </div>
+                    
+                    <div class="pt-4">
+                        <button type="submit" class="w-full bg-[#25D366] hover:bg-[#1ebd5a] text-white font-bold py-4 rounded-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex justify-center items-center group">
+                            <i class="fab fa-whatsapp text-2xl mr-2 group-hover:scale-110 transition-transform"></i> Send to WhatsApp
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS Animation Library
+        AOS.init({
+            once: true,
+            offset: 50,
+            duration: 800,
+            easing: 'ease-out-cubic',
+        });
+
+        // 1. Data Array - Updated to root folder for mobile upload compatibility
+        const products = [
+            { id: 1, name: '12" x 18" Gold Calendar', desc: 'Advt. Area: 5.5 x 9.5 Inches | Slip No: 6', image: '12x18-gold.jpg', delay: 0 },
+            { id: 2, name: '10" x 15" Deluxe Real Art', desc: 'Advt. Area: 5.25 x 9.25 Inches | Slip No: 5', image: '10x15-deluxe.jpg', delay: 100 },
+            { id: 3, name: '12" x 18" Deluxe Real Art', desc: 'Advt. Area: 6 x 11.25 Inches | Slip No: 6', image: '12x18-deluxe.jpg', delay: 200 },
+            { id: 4, name: '11" x 17" Fancy Die-cut (Foils)', desc: 'Advt. Area: 6.25 x 10.75 Inches | Slip No: 5/6', image: '11x17-fancy-foils.jpg', delay: 300 },
+            { id: 5, name: '11" x 17" Fancy Die-cut', desc: 'Advt. Area: 6.25 x 10.75 Inches | Slip No: 5/6', image: '11x17-fancy.jpg', delay: 0 },
+            { id: 6, name: '14" x 24" Fancy Die-cut (Foils)', desc: 'Advt. Area: 9 x 14 Inches | Slip No: 7', image: '14x24-fancy-foils.jpg', delay: 100 },
+            { id: 7, name: '20" x 30" Fancy Die-cut (Foils)', desc: 'Advt. Area: 10.75 x 18.75 Inches | Slip No: 10', image: '20x30-fancy-foils.jpg', delay: 200 },
+            { id: 8, name: '15" x 20" Monthly Calendar', desc: 'Monthly Gods / Multi Colour / Ivory Options', image: '15x20-monthly.jpg', delay: 300 },
+            { id: 9, name: '17" x 27" Monthly Calendar', desc: 'Rainbow Panjangam / Multi Colour', image: '17x27-monthly.jpg', delay: 0 },
+            { id: 10, name: '20" x 30" Monthly Calendar', desc: 'Multi Colour / Thithi Naksatram 6 Sheeter', image: '20x30-monthly.jpg', delay: 100 }
+        ];
+
+        // 2. Render Products Grid
+        function renderProducts() {
+            const grid = document.getElementById('productGrid');
+            
+            products.forEach(product => {
+                const card = document.createElement('div');
+                card.className = "bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.05)] hover:shadow-[0_10px_40px_rgba(153,0,0,0.15)] transition-all duration-500 flex flex-col border border-gray-100 group hover:-translate-y-2";
+                card.setAttribute('data-aos', 'fade-up');
+                card.setAttribute('data-aos-delay', product.delay);
+                
+                card.innerHTML = `
+                    <div class="h-72 overflow-hidden bg-gray-50 relative p-4 flex items-center justify-center">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
+                        <img 
+                            src="${product.image}" 
+                            alt="${product.name}"
+                            loading="lazy" 
+                            onerror="this.onerror=null;this.src='https://via.placeholder.com/400x500/FFF9E6/990000?text=Sample+Image';"
+                            class="max-w-full max-h-full object-contain drop-shadow-md group-hover:scale-110 transition-transform duration-700 ease-out"
+                        >
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col justify-between relative z-20 bg-white">
+                        <div class="mb-5">
+                            <h3 class="font-serif font-bold text-xl mb-2 text-sivakasi-dark group-hover:text-sivakasi-red transition-colors">${product.name}</h3>
+                            <p class="text-gray-500 text-sm font-light">${product.desc}</p>
+                        </div>
+                        <button onclick="openModal('${product.name}')" class="w-full bg-gray-50 hover:bg-gradient-to-r hover:from-sivakasi-red hover:to-sivakasi-dark text-sivakasi-red hover:text-white border border-gray-200 hover:border-transparent py-3 rounded-xl font-semibold transition-all duration-300 flex justify-center items-center">
+                            Request Quote <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                        </button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // 3. Modal Logic with smooth animation
+        const modal = document.getElementById('inquiryModal');
+        const modalContent = document.getElementById('modalContent');
+        const form = document.getElementById('enquiryForm');
+
+        function openModal(productName) {
+            document.getElementById('modalProductName').innerText = productName;
+            document.getElementById('productInterest').value = productName;
+            
+            // Show modal
+            modal.classList.remove('hidden');
+            // Trigger reflow
+            void modal.offsetWidth;
+            // Add animation classes
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modalContent.classList.remove('scale-95');
+            modalContent.classList.add('scale-100');
+            
+            // Prevent body scroll
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            // Remove animation classes
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            modalContent.classList.remove('scale-100');
+            modalContent.classList.add('scale-95');
+            
+            // Wait for transition, then hide
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                form.reset();
+                document.body.style.overflow = '';
+            }, 300);
+        }
+
+        // 4. Form Submission (WhatsApp Redirect)
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const product = document.getElementById('productInterest').value;
+            const name = document.getElementById('customerName').value;
+            const address = document.getElementById('customerAddress').value;
+            const district = document.getElementById('customerDistrict').value;
+            const state = document.getElementById('customerState').value;
+            const pincode = document.getElementById('customerPincode').value;
+            
+            const whatsappNumber = "917904216920";
+            
+            let message = `*New Product Enquiry*\n\n`;
+            message += `*Product:* ${product}\n\n`;
+            message += `*Customer Details:*\n`;
+            message += `Name: ${name}\n`;
+            message += `Address: ${address}\n`;
+            message += `District: ${district}\n`;
+            message += `State: ${state}\n`;
+            message += `Pincode: ${pincode}\n`;
+            
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+            
+            window.open(whatsappUrl, '_blank');
+            closeModal();
+        });
+
+        // Close modal if clicked outside
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Initialize Grid
+        document.addEventListener('DOMContentLoaded', renderProducts);
+    </script>
+</body>
+</html>
